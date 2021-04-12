@@ -82,27 +82,36 @@ struct HomeCardAdjust: View {
                     bqbConfidence = env.confidenceControlBQB
                 }
             }
-//            Spacer().frame(height: 20)
-//            VStack(spacing: 0) {
-//                HStack {
-//                    Text("期望图片可信度")
-//                        .opacity(0.8)
-//                    Spacer()
-//                    Text("<= \(Int(env.confidenceControlBAD * 100))%")
-//                        .font(.system(size: 12, weight: .semibold, design: .monospaced))
-//                }
-//                .font(.system(size: 16, weight: .semibold))
-//
-//                Slider(value: $badConfidence.onChange({ newValue in
-//                    if prevVals["bad", default: ""] != "<= \(Int(newValue * 100))%" {
-//                        haptic()
-//                        prevVals["bad", default: ""] = "<= \(Int(newValue * 100))%"
-//                    }
-//                    env.confidenceControlBAD = newValue
-//                }), in: 0 ... 1).onAppear {
-//                    badConfidence = env.confidenceControlBAD
-//                }
-//            }
+            
+            Spacer().frame(height: 20)
+            VStack(spacing: 0) {
+                HStack {
+                    Text("检测图片内的二维码")
+                        .opacity(0.8)
+                    Spacer()
+                    Button(action: {
+                        haptic()
+                        env.detectQRCode.toggle()
+                    }, label: {
+                        HStack {
+                            Text(env.detectQRCode ? "已启用" : "启用")
+                            Image(systemName: env.detectQRCode ? "qrcode.viewfinder" : "viewfinder")
+                        }
+                        .font(.system(size: 16, weight: .semibold))
+                    })
+                }
+                .font(.system(size: 16, weight: .semibold))
+                HStack {
+                    Text("检测二维码会消耗大量的计算资源 会显著影响处理时间")
+                        .frame(height: 35)
+                        .font(.system(size: 10, weight: .semibold))
+                        .opacity(0.6)
+                    Spacer()
+                }
+
+                
+            }
+            
 
             Spacer().frame(height: 20)
             Text("""

@@ -39,6 +39,25 @@
 		50DC180B261CA6D400A740C0 /* UIAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC180A261CA6D400A740C0 /* UIAlerts.swift */; };
 		50FCE759261AAED100A26E21 /* BQBClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 50FCE758261AAED100A26E21 /* BQBClassifier.mlmodel */; };
 		50FCE75A261AAED100A26E21 /* BQBClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 50FCE758261AAED100A26E21 /* BQBClassifier.mlmodel */; };
+		CCE61750261F631E00E24950 /* BQBClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 50FCE758261AAED100A26E21 /* BQBClassifier.mlmodel */; };
+		CCE61751261F631E00E24950 /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C851012619B0390025A7DB /* HolderView.swift */; };
+		CCE61752261F631E00E24950 /* CardAdjust.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AF4C9D261EF1D2001177E3 /* CardAdjust.swift */; };
+		CCE61753261F631E00E24950 /* HomeCardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD353672619E6B400580724 /* HomeCardBase.swift */; };
+		CCE61754261F631E00E24950 /* BQBClassifierManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B8CC42619B75A000006A9 /* BQBClassifierManager.swift */; };
+		CCE61755261F631E00E24950 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD353462619BCD900580724 /* ImagePickerView.swift */; };
+		CCE61756261F631E00E24950 /* CardSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAA32261A0E5C008D1B89 /* CardSecond.swift */; };
+		CCE61757261F631E00E24950 /* Color+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3534C2619DE9F00580724 /* Color+UIColor.swift */; };
+		CCE61758261F631E00E24950 /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD353562619E1FD00580724 /* LabelButton.swift */; };
+		CCE61759261F631E00E24950 /* AppStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3535D2619E34B00580724 /* AppStore.swift */; };
+		CCE6175A261F631E00E24950 /* GetAllPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C055982619F89C0085823B /* GetAllPhotos.swift */; };
+		CCE6175B261F631E00E24950 /* AlbumPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD35384261AB1E700580724 /* AlbumPickerView.swift */; };
+		CCE6175C261F631E00E24950 /* Binding+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD3536D2619E6F100580724 /* Binding+Extension.swift */; };
+		CCE6175D261F631E00E24950 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506B8CAA2619B512000006A9 /* MainView.swift */; };
+		CCE6175E261F631E00E24950 /* CardStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAA2B261A0E2D008D1B89 /* CardStart.swift */; };
+		CCE6175F261F631E00E24950 /* CardProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508CAA39261A0E83008D1B89 /* CardProcessing.swift */; };
+		CCE61760261F631E00E24950 /* UIAlerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DC180A261CA6D400A740C0 /* UIAlerts.swift */; };
+		CCE61761261F631E00E24950 /* BQBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C851002619B0390025A7DB /* BQBApp.swift */; };
+		CCE61764261F631E00E24950 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50C851022619B03B0025A7DB /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,7 +96,7 @@
 		50C851012619B0390025A7DB /* HolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
 		50C851022619B03B0025A7DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50C851072619B03B0025A7DB /* BQB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BQB.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		50C8510A2619B03B0025A7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50C8510A2619B03B0025A7DB /* Info-Dev.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Dev.plist"; sourceTree = "<group>"; };
 		50C8510F2619B03B0025A7DB /* BQB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BQB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50C851112619B03B0025A7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50C851122619B03B0025A7DB /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
@@ -89,6 +108,8 @@
 		50C851282619B03B0025A7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50DC180A261CA6D400A740C0 /* UIAlerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlerts.swift; sourceTree = "<group>"; };
 		50FCE758261AAED100A26E21 /* BQBClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = BQBClassifier.mlmodel; sourceTree = "<group>"; };
+		CCE61768261F631E00E24950 /* BQB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BQB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCE6177E261F75EA00E24950 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +135,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		50C8511F2619B03B0025A7DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE61762261F631E00E24950 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -195,6 +223,7 @@
 				50C8510F2619B03B0025A7DB /* BQB.app */,
 				50C851172619B03B0025A7DB /* Tests iOS.xctest */,
 				50C851222619B03B0025A7DB /* Tests macOS.xctest */,
+				CCE61768261F631E00E24950 /* BQB.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,7 +234,8 @@
 				0BD353462619BCD900580724 /* ImagePickerView.swift */,
 				50C055982619F89C0085823B /* GetAllPhotos.swift */,
 				50DC180A261CA6D400A740C0 /* UIAlerts.swift */,
-				50C8510A2619B03B0025A7DB /* Info.plist */,
+				50C8510A2619B03B0025A7DB /* Info-Dev.plist */,
+				CCE6177E261F75EA00E24950 /* Info.plist */,
 				0BD3534C2619DE9F00580724 /* Color+UIColor.swift */,
 				0BD35384261AB1E700580724 /* AlbumPickerView.swift */,
 			);
@@ -242,9 +272,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		50C851062619B03B0025A7DB /* BQB (iOS) */ = {
+		50C851062619B03B0025A7DB /* BQB (iOS) - Development */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 50C851312619B03B0025A7DB /* Build configuration list for PBXNativeTarget "BQB (iOS)" */;
+			buildConfigurationList = 50C851312619B03B0025A7DB /* Build configuration list for PBXNativeTarget "BQB (iOS) - Development" */;
 			buildPhases = (
 				50C851032619B03B0025A7DB /* Sources */,
 				50C851042619B03B0025A7DB /* Frameworks */,
@@ -254,7 +284,7 @@
 			);
 			dependencies = (
 			);
-			name = "BQB (iOS)";
+			name = "BQB (iOS) - Development";
 			productName = "BQB (iOS)";
 			productReference = 50C851072619B03B0025A7DB /* BQB.app */;
 			productType = "com.apple.product-type.application";
@@ -312,6 +342,23 @@
 			productReference = 50C851222619B03B0025A7DB /* Tests macOS.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		CCE6174E261F631E00E24950 /* BQB (iOS) - App Store */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCE61765261F631E00E24950 /* Build configuration list for PBXNativeTarget "BQB (iOS) - App Store" */;
+			buildPhases = (
+				CCE6174F261F631E00E24950 /* Sources */,
+				CCE61762261F631E00E24950 /* Frameworks */,
+				CCE61763261F631E00E24950 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BQB (iOS) - App Store";
+			productName = "BQB (iOS)";
+			productReference = CCE61768261F631E00E24950 /* BQB.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -350,7 +397,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50C851062619B03B0025A7DB /* BQB (iOS) */,
+				50C851062619B03B0025A7DB /* BQB (iOS) - Development */,
+				CCE6174E261F631E00E24950 /* BQB (iOS) - App Store */,
 				50C8510E2619B03B0025A7DB /* BQB (macOS) */,
 				50C851162619B03B0025A7DB /* Tests iOS */,
 				50C851212619B03B0025A7DB /* Tests macOS */,
@@ -386,6 +434,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCE61763261F631E00E24950 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE61764261F631E00E24950 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,12 +506,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCE6174F261F631E00E24950 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCE61750261F631E00E24950 /* BQBClassifier.mlmodel in Sources */,
+				CCE61751261F631E00E24950 /* HolderView.swift in Sources */,
+				CCE61752261F631E00E24950 /* CardAdjust.swift in Sources */,
+				CCE61753261F631E00E24950 /* HomeCardBase.swift in Sources */,
+				CCE61754261F631E00E24950 /* BQBClassifierManager.swift in Sources */,
+				CCE61755261F631E00E24950 /* ImagePickerView.swift in Sources */,
+				CCE61756261F631E00E24950 /* CardSecond.swift in Sources */,
+				CCE61757261F631E00E24950 /* Color+UIColor.swift in Sources */,
+				CCE61758261F631E00E24950 /* LabelButton.swift in Sources */,
+				CCE61759261F631E00E24950 /* AppStore.swift in Sources */,
+				CCE6175A261F631E00E24950 /* GetAllPhotos.swift in Sources */,
+				CCE6175B261F631E00E24950 /* AlbumPickerView.swift in Sources */,
+				CCE6175C261F631E00E24950 /* Binding+Extension.swift in Sources */,
+				CCE6175D261F631E00E24950 /* MainView.swift in Sources */,
+				CCE6175E261F631E00E24950 /* CardStart.swift in Sources */,
+				CCE6175F261F631E00E24950 /* CardProcessing.swift in Sources */,
+				CCE61760261F631E00E24950 /* UIAlerts.swift in Sources */,
+				CCE61761261F631E00E24950 /* BQBApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		50C851192619B03B0025A7DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 50C851062619B03B0025A7DB /* BQB (iOS) */;
+			target = 50C851062619B03B0025A7DB /* BQB (iOS) - Development */;
 			targetProxy = 50C851182619B03B0025A7DB /* PBXContainerItemProxy */;
 		};
 		50C851242619B03B0025A7DB /* PBXTargetDependency */ = {
@@ -585,10 +666,11 @@
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = "iOS/Info-Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -611,10 +693,11 @@
 				CODE_SIGNING_ALLOWED = YES;
 				CODE_SIGNING_REQUIRED = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = iOS/Info.plist;
+				INFOPLIST_FILE = "iOS/Info-Dev.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -759,6 +842,59 @@
 			};
 			name = Release;
 		};
+		CCE61766261F631E00E24950 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.bqb.classifier;
+				PRODUCT_NAME = BQB;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCE61767261F631E00E24950 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGNING_ALLOWED = YES;
+				CODE_SIGNING_REQUIRED = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = wiki.qaq.bqb.classifier;
+				PRODUCT_NAME = BQB;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -771,7 +907,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		50C851312619B03B0025A7DB /* Build configuration list for PBXNativeTarget "BQB (iOS)" */ = {
+		50C851312619B03B0025A7DB /* Build configuration list for PBXNativeTarget "BQB (iOS) - Development" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				50C851322619B03B0025A7DB /* Debug */,
@@ -803,6 +939,15 @@
 			buildConfigurations = (
 				50C8513B2619B03B0025A7DB /* Debug */,
 				50C8513C2619B03B0025A7DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CCE61765261F631E00E24950 /* Build configuration list for PBXNativeTarget "BQB (iOS) - App Store" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCE61766261F631E00E24950 /* Debug */,
+				CCE61767261F631E00E24950 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

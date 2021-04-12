@@ -81,12 +81,17 @@ struct MainView: View {
                         Color(.red).frame(height: 0.5).opacity(0.5)
                     }
                     Spacer().frame(height: 20)
+                        .id("start")
                 }
 
                 Group {
+                    
+                    Spacer()
+                        .frame(height: 1)
+                        .offset(y: -18)
+                    
                     HomeCardStart()
                         .disabled(currentStep != 0).id("top")
-                        .id("start")
 
                     Button(action: {
                         haptic()
@@ -112,12 +117,17 @@ struct MainView: View {
                         .padding()
                     })
                         .disabled(currentStep != 0)
+                        .id("second")
                 }
 
                 Group {
+                    
+                    Spacer()
+                        .frame(height: 1)
+                        .offset(y: -18)
+                    
                     HomeCardSecond()
                         .disabled(currentStep != 1)
-                        .id("second")
 
                     Button(action: {
                         haptic()
@@ -147,12 +157,13 @@ struct MainView: View {
                         .padding()
                     })
                         .disabled(currentStep != 1)
+                        .id("adjust")
                 }
 
                 Group {
+                    
                     HomeCardAdjust()
                         .disabled(currentStep != 2)
-                        .id("adjust")
 
                     Button(action: {
                         haptic()
@@ -185,9 +196,14 @@ struct MainView: View {
                 }
 
                 Group {
+                    
+                    Spacer()
+                        .frame(height: 1)
+                        .offset(y: -18)
+                        .id("progress")
+                    
                     HomeCardProcessing()
                         .disabled(currentStep != 2)
-                        .id("progress")
                 }
 
                 Group {
@@ -205,11 +221,17 @@ struct MainView: View {
                         Text("获取项目源码 ->")
                             .font(.system(size: 8, weight: .semibold, design: .monospaced))
                     })
-                    .id("final")
+                    
+                    Spacer()
+                        .frame(height: 1)
+                        .offset(y: 18)
                 }
 
                 // 避免 adjust 被移动到 top 的时候 超出范围
                 // 然后用户拉动 scrollview 就很开心的反复横跳
+                Spacer()
+                    .frame(height: 25)
+                    .id("final")
                 Spacer()
                     .frame(height: 233)
             }

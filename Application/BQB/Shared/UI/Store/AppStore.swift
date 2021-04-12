@@ -37,16 +37,19 @@ public extension UserDefaultsWrapper where Value: ExpressibleByNilLiteral {
 }
 
 class AppStore: ObservableObject {
-
+    
     static let shared = AppStore()
-
+    
     private init() {
         confidenceControlBQB = AppDiskStore.shared.confidenceControlBQB
+        if confidenceControlBQB < 0.5 {
+            confidenceControlBQB = 0.8
+        }
 //        confidenceControlBAD = AppDiskStore.shared.confidenceControlBAD
         requireImageSizeSmall = AppDiskStore.shared.requireImageSizeSmall
         updatePrivacyStatus()
     }
-
+    
     func updatePrivacyStatus() {
         let status = checkPrivacy()
         if status == -1 {
@@ -60,47 +63,47 @@ class AppStore: ObservableObject {
             permissionRequired = false
         }
     }
-
+    
     @Published var selectedImages: [PHAsset] = []
     @Published var selectedAlbum: String = "表情包整理 - \(Int(Date().timeIntervalSince1970))"
     @Published var processedCount: Int = 0
     @Published var processedAllCount: Int = 0
     @Published var currentStep: Int = 0
-
+    
     static let requiredSizeScale = 1500
-    @Published var confidenceControlBQB: Double = 0.75 {
+    @Published var confidenceControlBQB: Double = 0.8 {
         didSet {
             AppDiskStore.shared.confidenceControlBQB = confidenceControlBQB
         }
     }
-//    @Published var confidenceControlBAD: Double = 0.25 {
-//        didSet {
-//            AppDiskStore.shared.confidenceControlBAD = confidenceControlBAD
-//        }
-//    }
     @Published var requireImageSizeSmall: Int = 500 {
         didSet {
             AppDiskStore.shared.requireImageSizeSmall = requireImageSizeSmall
         }
     }
-
+    @Published var detectQRCode: Bool = false {
+        didSet {
+            AppDiskStore.shared.detectQRCode = detectQRCode
+        }
+    }
+    
     @Published var permissionRequired: Bool = false
     @Published var permissionDenied: Bool = false
-
+    
 }
 
 class AppDiskStore {
-
+    
     static let shared = AppDiskStore()
     private init() {}
 
-//    @UserDefaultsWrapper(key: "wiki.qaq.confidenceControlBAD", defaultValue: 0.75)
-//    var confidenceControlBAD: Double
-
     @UserDefaultsWrapper(key: "wiki.qaq.confidenceControlBQB", defaultValue: 0.8)
     var confidenceControlBQB: Double
-
+    
     @UserDefaultsWrapper(key: "wiki.qaq.requireImageSizeSmall", defaultValue: 500)
     var requireImageSizeSmall: Int
-
+    
+    @UserDefaultsWrapper(key: "wiki.qaq.detectQRCode", defaultValue: false)
+    var detectQRCode: Bool
+    
 }

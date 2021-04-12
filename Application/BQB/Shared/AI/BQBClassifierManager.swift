@@ -25,9 +25,6 @@ final class BQBClassifierManager {
     }
 
     func validResult(bqb: Double, bad: Double) -> Bool {
-//        if bad > AppStore.shared.confidenceControlBAD {
-//            return false
-//        }
         if bqb > AppStore.shared.confidenceControlBQB {
             return true
         }
@@ -147,14 +144,60 @@ final class BQBClassifierManager {
         option.isSynchronous = true
         if asset.pixelHeight > AppStore.shared.requireImageSizeSmall
             || asset.pixelWidth > AppStore.shared.requireImageSizeSmall {
-            debugPrint("This image's height or width greater than \(AppStore.shared.requireImageSizeSmall), skip.")
+            debugPrint("This image's height or width greater than requested \(AppStore.shared.requireImageSizeSmall), skip.")
             return nil
         }
+        
+        // width = 1000
+        // height = 2000
+        let aspectRatio = Double(asset.pixelWidth) / Double(asset.pixelHeight) // 0.5
+        var requestWidth = 500.0
+        var requestHeight = 500.0
+        // very bad aspect ratio
+        if aspectRatio <= 0.2 { return nil }
+        if aspectRatio >= 5 { return nil }
+        if aspectRatio == 1 {
+            // dont need to
+        } else if aspectRatio > 1 {
+            requestWidth *= aspectRatio
+        } else {
+            requestHeight = requestHeight / aspectRatio
+        }
+        debugPrint("scale \(asset.pixelWidth)x\(asset.pixelHeight) -> \(requestWidth)x\(requestHeight)")
+        
         manager.requestImage(for: asset, targetSize: CGSize(width: 500, height: 500), contentMode: .aspectFit, options: option, resultHandler: { result, _ in
             if let result = result {
                 thumbnail = result
             }
         })
+        
+        // extract qr features from code
+        if AppStore.shared.detectQRCode, let features = detectQRCode(thumbnail), !features.isEmpty {
+            for case _ as CIQRCodeFeature in features {
+                debugPrint("detected qr code inside image skip current")
+                return nil
+            }
+        }
+        
         return thumbnail
     }
+    
+    func detectQRCode(_ image: UIImage?) -> [CIFeature]? {
+        if let image = image, let ciImage = CIImage.init(image: image){
+            var options: [String: Any]
+            let context = CIContext()
+            options = [CIDetectorAccuracy: CIDetectorAccuracyHigh]
+            let qrDetector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: options)
+            if ciImage.properties.keys.contains((kCGImagePropertyOrientation as String)){
+                options = [CIDetectorImageOrientation: ciImage.properties[(kCGImagePropertyOrientation as String)] ?? 1]
+            } else {
+                options = [CIDetectorImageOrientation: 1]
+            }
+            let features = qrDetector?.features(in: ciImage, options: options)
+            return features
+
+        }
+        return nil
+    }
 }
+
