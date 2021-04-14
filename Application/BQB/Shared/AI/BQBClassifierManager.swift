@@ -60,8 +60,8 @@ final class BQBClassifierManager {
 
     // TODO: 锁UI界面
     var lock = NSLock()
-    public func startJobs(urls: [PHAsset], completion: @escaping (() -> ())) {
-        lock.lock()
+    public typealias ErrorDescriptor = String
+    public func startJobs(urls: [PHAsset], completion: @escaping ((ErrorDescriptor?) -> ())) {
 
         // 状态
         AppStore.shared.processedCount = 0
@@ -72,7 +72,7 @@ final class BQBClassifierManager {
         var collection: PHFetchResult<PHAssetCollection>
         collection = PHAssetCollection.fetchAssetCollections(withLocalIdentifiers: [albumName], options: nil)
         if collection.count == 0 {
-            try! PHPhotoLibrary.shared().performChangesAndWait {
+            try? PHPhotoLibrary.shared().performChangesAndWait {
                 PHAssetCollectionChangeRequest.creationRequestForAssetCollection(withTitle: albumName)
             }
             let fetchOptions = PHFetchOptions()
@@ -80,7 +80,16 @@ final class BQBClassifierManager {
             collection = PHAssetCollection.fetchAssetCollections(with: .album, subtype: .any, options: fetchOptions)
         }
 
-        let albumObject = collection.firstObject!
+        guard let albumObject = collection.firstObject else {
+            DispatchQueue.main.async {
+                AppStore.shared.selectedImages = []
+                AppStore.shared.processedCount = 0
+                AppStore.shared.processedAllCount = 0
+                AppStore.shared.currentStep = 0
+                completion("创建相册失败 权限错误 请在设置内将照片图库权限修改为 *全部照片*")
+            }
+            return
+        }
 
         DispatchQueue.global().async { [self] in
             // 开始处理
@@ -107,15 +116,13 @@ final class BQBClassifierManager {
 //            }
             print("Completed!")
             DispatchQueue.main.async {
-                lock.unlock()
                 AppStore.shared.selectedImages = []
 //                AppStore.shared.selectedAlbum = "表情包整理 - \(Int(Date().timeIntervalSince1970))"
                 AppStore.shared.processedCount = 0
                 AppStore.shared.processedAllCount = 0
                 AppStore.shared.currentStep = 0
-                
                 completeAlert(imgs: found)
-                completion()
+                completion(nil)
             }
         }
     }

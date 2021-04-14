@@ -15,12 +15,14 @@ struct MainView: View {
             env.currentStep = newValue
         }
     }
-
+    
     var body: some View {
         ScrollViewReader { reader in
             VStack {
                 
-                Spacer().frame(height: 1).id("veryTop")
+                Spacer()
+                    .frame(height: 1)
+                    .id("veryTop")
                 
                 if env.permissionRequired {
                     HomeCardBase {
@@ -86,12 +88,10 @@ struct MainView: View {
 
                 Group {
                     
-                    Spacer()
-                        .frame(height: 1)
-                        .offset(y: -18)
-                    
                     HomeCardStart()
-                        .disabled(currentStep != 0).id("top")
+                        .disabled(currentStep != 0)
+                        .opacity(currentStep != 0 ? 0.5 : 1)
+                        .animation(.easeInOut)
 
                     Button(action: {
                         haptic()
@@ -127,7 +127,9 @@ struct MainView: View {
                         .offset(y: -18)
                     
                     HomeCardSecond()
+                        .opacity(currentStep != 1 ? 0.5 : 1)
                         .disabled(currentStep != 1)
+                        .animation(.easeInOut)
 
                     Button(action: {
                         haptic()
@@ -163,11 +165,19 @@ struct MainView: View {
                 Group {
                     
                     HomeCardAdjust()
+                        .opacity(currentStep != 2 ? 0.5 : 1)
                         .disabled(currentStep != 2)
+                        .animation(.easeInOut)
 
                     Button(action: {
                         haptic()
-                        BQBClassifierManager.shared.startJobs(urls: env.selectedImages) {
+                        BQBClassifierManager.shared.startJobs(urls: env.selectedImages) { error in
+                            if let error = error {
+                                presentAlert(title: "错误", message: error)
+                                // 目前就这一种错误 随意啦
+                                AppStore.shared.permissionDenied = true
+                                AppStore.shared.permissionRequired = true
+                            }
                             withAnimation(Animation.spring(response: 1, dampingFraction: 1, blendDuration: 0)) {
                                 reader.scrollTo("veryTop", anchor: .top)
                             }
@@ -203,7 +213,9 @@ struct MainView: View {
                         .id("progress")
                     
                     HomeCardProcessing()
-                        .disabled(currentStep != 2)
+                        .opacity(currentStep != 3 ? 0.5 : 1)
+                        .disabled(currentStep != 3)
+                        .animation(.easeInOut)
                 }
 
                 Group {

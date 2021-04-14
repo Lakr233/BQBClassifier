@@ -86,7 +86,7 @@ struct HomeCardAdjust: View {
             Spacer().frame(height: 20)
             VStack(spacing: 0) {
                 HStack {
-                    Text("检测图片内的二维码")
+                    Text("排除二维码")
                         .opacity(0.8)
                     Spacer()
                     Button(action: {

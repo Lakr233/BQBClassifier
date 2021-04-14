@@ -19,7 +19,7 @@ struct BQBApp: App {
                         EmptyView()
                     }
                     HolderView()
-                        .navigationTitle("表情包管理大师 🕶️")
+                        .navigationTitle("表情包提取大师 🕶️")
                         .environmentObject(AppStore.shared)
                         .accentColor(Color("AccentColor"))
                         .navigationBarTitleDisplayMode(idiom == .pad ? .inline : .large)
