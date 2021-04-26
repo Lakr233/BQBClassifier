@@ -1,5 +1,7 @@
 # BQBClassifier 🕶️
 
+[Download From App Store](https://apps.apple.com/us/app/%E8%A1%A8%E6%83%85%E5%8C%85%E6%8F%90%E5%8F%96%E5%A4%A7%E5%B8%88/id1562102110)
+
 Given that my photo albums are mixed with various emojis that often spoil my good mood, I wrote such an app to organize my albums. With a core made with artificial intelligence, it uses nearly 50G of emojis and daily photos as training data and deeply integrates CoreML technology to provide a very perfect user experience ~~for myself~~.
 
 ![Preview](./Workflow/Assets/Preview.png)
